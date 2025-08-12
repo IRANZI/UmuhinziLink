@@ -34,7 +34,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50 transition-all duration-300 animate-fade-in">
+    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo placeholder */}
         <div className="flex items-center space-x-2">

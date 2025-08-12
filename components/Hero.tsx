@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="bg-green-50">
+    <section className="bg-green-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Section */}
         <div>

@@ -13,8 +13,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="bg-white">
+      <Navbar />
       <section id="home" className="section-fade-up section-delay-1">
-        <Navbar />
         <Hero />
       </section>
       <section id="features" className="section-fade-up section-delay-2">
