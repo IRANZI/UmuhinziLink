@@ -4,7 +4,7 @@ import {
   CheckCircle, LayoutGrid, Heart, MessageSquare, BarChart2, Mail, 
   ShoppingCart, User, Phone, Settings, LogOut, ShoppingBag, 
   Clock, Package, Eye, Calendar, Search, ChevronDown, DollarSign,
-  Apple, Wheat, Bean, Carrot, MessageCircle, RefreshCw
+  Apple, Wheat, Bean, Carrot, MessageCircle, RefreshCw,UserIcon,GridIcon,FilePlus
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -15,17 +15,15 @@ const Logo = () => (
 );
 
 const menuItems = [
-  { label: 'Dashboard', href: '/buyer_dashboard', icon: CheckCircle },
-  { label: 'My Products', href: '/buyer_dashboard/products', icon: LayoutGrid },
-  { label: 'Input Request', href: '/buyer_dashboard/requests', icon: Heart },
-  { label: 'AI Tips', href: '/buyer_dashboard/ai', icon: MessageSquare },
-  { label: 'Market Analytics', href: '/buyer_dashboard/market_analysis', icon: BarChart2 },
-  { label: 'Message', href: '/messages', icon: Mail },
-  { label: 'Orders', href: '/buyer_dashboard/orders', icon: ShoppingCart },
-  { label: 'Profile', href: '/profile', icon: User },
-  { label: 'Contact', href: '/contact', icon: Phone },
-  { label: 'Settings', href: '/settings', icon: Settings },
-  { label: 'Logout', href: '/logout', icon: LogOut },
+  { label: "Dashboard", href: "/buyer_dashboard", icon: CheckCircle },
+  { label: "My Purchase", href: "/buyer_dashboard/purchases", icon: GridIcon },
+  { label: "Browse product", href: "/buyer_dashboard/product", icon: FilePlus },
+  { label: "Saved items", href: "/buyer_dashboard/saved", icon: MessageSquare },
+  { label: "Message", href: "/messages", icon: Mail },
+  { label: "Profile", href: "/profile", icon: UserIcon },
+  { label: "Contact", href: "/contact", icon: Phone },
+  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Logout", href: "/logout", icon: LogOut },
 ];
 
 export default function MyPurchases() {
@@ -41,7 +39,7 @@ export default function MyPurchases() {
         <aside className="w-64 bg-white border-r flex flex-col fixed left-0 top-16 h-[calc(100vh-4rem)] overflow-y-auto">
           <nav className="flex-1 px-4 py-6 space-y-2">
             {menuItems.map((item, index) => {
-              const isActive = item.label === 'My Products';
+              const isActive = item.label === 'My Purchase';
               const Icon = item.icon;
               const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
               return (
