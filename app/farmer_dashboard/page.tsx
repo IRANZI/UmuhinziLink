@@ -1,7 +1,7 @@
 "use client";
 
 import { 
-  LayoutGrid, Box, FilePlus, Sparkles, BarChart2, MessageSquare, 
+  LayoutGrid, FilePlus, BarChart2, MessageSquare, 
   ShoppingCart, User, Phone, Settings, LogOut, CloudSun, Mail, Leaf, Package, CheckCircle 
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
@@ -81,13 +81,13 @@ export default function Dashboard() {
         <main className="flex-1 p-6 overflow-auto ml-64">
           
           {/* Welcome Banner */}
-          <div className="bg-green-500 text-white rounded-xl p-6 shadow-sm">
+          <div className="bg-green-500 text-white mb-8 rounded-xl p-6 shadow-sm">
             <h1 className="text-xl font-semibold mb-1">Welcome back, Farmer Chance!</h1>
             <p className="text-sm opacity-90">Manage your agricultural inputs and connect with farmers across Rwanda</p>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 mb-8">
             {[
               { label: 'Produce Listed', value: 12, icon: Leaf, bgColor: 'bg-green-50', iconColor: 'text-green-600', textColor: 'text-green-600' },
               { label: 'Active Orders', value: 5, icon: Package, bgColor: 'bg-blue-50', iconColor: 'text-blue-600', textColor: 'text-blue-600' },
