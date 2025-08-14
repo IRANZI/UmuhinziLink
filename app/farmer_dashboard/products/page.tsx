@@ -3,8 +3,8 @@
 
 import { usePathname } from 'next/navigation';
 import { 
-  CheckCircle, LayoutGrid, Heart, MessageSquare, BarChart, Gift, Calendar, 
-  ClipboardList, Users, Settings, LogOut, Check, Pencil, Trash2, Box, FilePlus, BarChart2, ShoppingCart, User, Phone, Mail 
+  CheckCircle, LayoutGrid, MessageSquare, 
+ Settings, LogOut, Check, Pencil, Trash2, FilePlus, BarChart2, ShoppingCart, User, Phone, Mail ,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -25,7 +25,7 @@ const menuItems = [
 const products = [
   { id: 1, name: 'Fresh Tomatoes', image: '/tomatoes.png', status: 'Available', quantity: '50 kg', price: '$3.00/kg', location: 'Kigali' },
   { id: 2, name: 'Green Beans', image: '/green-beans.png', status: 'Available', quantity: '30 kg', price: '$3.00/kg', location: 'Musanze' },
-  { id: 3, name: 'Sweet Corn', image: '/sweet-corns.png', status: 'Sold', quantity: '100 pieces', price: '$0.50/piece', location: 'Huye' },
+  { id: 3, name: 'Sweet Corn', image: '/sweet-corns.png', status: 'Sold', quantity: '100 kg', price: '$0.50/kg', location: 'Huye' },
   { id: 4, name: 'Fresh Carrots', image: '/carrots.png', status: 'Available', quantity: '25 kg', price: '$1.80/kg', location: 'Nyagatare' },
   { id: 5, name: 'Fresh Cabbage', image: '/cabbage.png', status: 'Available', quantity: '40 heads', price: '$1.20/head', location: 'Rubavu' },
   { id: 6, name: 'Irish Potatoes', image: '/potatoes.png', status: 'Available', quantity: '80 kg', price: '$0.80/kg', location: 'Ruhengeri' },
@@ -45,7 +45,7 @@ export default function Products() {
       {/* Header */}
       <header className="sticky top-0 z-30 bg-white border-b h-16 flex items-center justify-between px-8 shadow-sm">
         <Logo />
-        <button className="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2">
+        <button className="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 cursor-pointer">
           + Add New Produce
         </button>
       </header>
@@ -101,12 +101,18 @@ export default function Products() {
               className="w-2/3 bg-white border text-gray-600 border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm"
             />
             <div className="flex gap-4">
-              <button className="bg-white border border-gray-300 text-gray-800 rounded-md py-2 px-4 text-sm flex items-center gap-1 shadow-sm">
-                All Crops <span className="text-gray-500">▼</span>
-              </button>
-              <button className="bg-white border border-gray-300 text-gray-800 rounded-md py-2 px-4 text-sm flex items-center gap-1 shadow-sm">
-                All Status <span className="text-gray-500">▼</span>
-              </button>
+              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white text-gray-700 cursor-pointer">
+                <option>All Crops</option>
+                <option>Maize</option>
+                <option>Beans</option>
+                <option>Bananas</option>
+              </select>
+              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white text-gray-700 cursor-pointer">
+                <option>All Status</option>
+                <option>Available</option>
+                <option>Sold</option>
+                
+              </select>
             </div>
           </div>
 
@@ -125,24 +131,24 @@ export default function Products() {
                   {product.status}
                 </div>
                 <div className="p-4">
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">{product.name}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900 ">{product.name}</h3>
                   <p className="text-sm text-gray-900 mb-1">
-                    Quantity: <span className="font-semibold">{product.quantity}</span>
+                    Quantity: <span className="font-semibold ml-84">{product.quantity}</span>
                   </p>
                   <p className="text-sm text-gray-900 mb-1">
-                    Price: <span className="font-semibold">{product.price}</span>
+                    Price: <span className="font-semibold ml-90">{product.price}</span>
                   </p>
                   <p className="text-sm text-gray-900 mb-4">
-                    Location: <span className="font-semibold">{product.location}</span>
+                    Location: <span className="font-semibold ml-84">{product.location}</span>
                   </p>
                   <div className="flex gap-2">
-                    <button className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-sm font-semibold flex items-center gap-1 hover:bg-blue-200 transition">
-                      <Pencil className="w-4 h-4" /> Edit
+                    <button className="bg-blue-100 text-blue-800 px-35 py-1 rounded-lg text-sm font-semibold flex items-center gap-1 hover:bg-blue-200 transition  cursor-pointer">
+                      <Pencil className="w-4 h-4 "  /> Edit
                     </button>
-                    <button className="bg-green-700 text-white px-4 py-1 rounded-lg text-sm font-semibold flex items-center gap-1 hover:bg-green-800 transition">
+                    <button className="bg-green-700 text-white px-4 py-1 rounded-lg text-sm font-semibold flex items-center gap-1 hover:bg-green-800 transition  cursor-pointer">
                       <Check className="w-4 h-4" /> Sold
                     </button>
-                    <button className="bg-red-300 text-red-700 p-2 rounded-lg hover:bg-red-200 transition">
+                    <button className="bg-red-300 text-red-700 p-2 rounded-lg hover:bg-red-200 transition  cursor-pointer">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
@@ -152,12 +158,12 @@ export default function Products() {
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-center items-center gap-4 mt-8">
-            <button className="text-gray-600">&lt;</button>
-            <button className="bg-green-600 text-white px-3 py-1 rounded-md">1</button>
-            <button className="text-gray-600">2</button>
-            <button className="text-gray-600">3</button>
-            <button className="text-gray-600">&gt;</button>
+          <div className="flex justify-center items-center gap-4 mt-8 ">
+            <button className="text-gray-600  cursor-pointer">&lt;</button>
+            <button className="bg-green-600 text-white px-3 py-1 rounded-md  cursor-pointer">1</button>
+            <button className="text-gray-600  cursor-pointer">2</button>
+            <button className="text-gray-600  cursor-pointer">3</button>
+            <button className="text-gray-600  cursor-pointer">&gt;</button>
           </div>
         </main>
       </div>
