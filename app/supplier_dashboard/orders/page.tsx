@@ -18,7 +18,6 @@ const menuItems = [
   { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
   { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
   { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Market Analytics', href: '/supplier_dashboard/market_analysis', icon: BarChart2 },
   { label: 'Message', href: '/messages', icon: Mail },
   { label: 'Profile', href: '/profile', icon: User },
   { label: 'Contact', href: '/contact', icon: Phone },
@@ -43,7 +42,7 @@ export default function OrdersPage() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Orders';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; 
+              const showDivider = index === 3 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -73,7 +72,7 @@ export default function OrdersPage() {
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Orders</h1>
               <p className="text-gray-600">Manage your order requests for seeds, fertilizers, and other inputs</p>
             </div>
-            <button className="bg-green-600 text-white font-medium py-2.5 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
+            <button className="bg-green-600 text-white cursor-pointer font-medium py-2.5 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
               <Plus className="w-4 h-4" />
               New Order
             </button>
@@ -218,13 +217,13 @@ export default function OrdersPage() {
                     </td>
                     <td className="py-4 px-4">
                       <div className="flex gap-2">
-                        <button className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-md transition-colors">
+                        <button className="p-1.5 text-blue-600 hover:bg-blue-50 rounded-md  cursor-pointer transition-colors">
                           <Eye className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-green-600 hover:bg-green-50 rounded-md transition-colors">
+                        <button className="p-1.5 text-green-600 hover:bg-green-50 cursor-pointer rounded-md transition-colors">
                           <CheckCircle className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-gray-600 hover:bg-gray-50 rounded-md transition-colors">
+                        <button className="p-1.5 text-gray-600 hover:bg-gray-50 cursor-pointer rounded-md transition-colors">
                           <MoreHorizontal className="w-4 h-4" />
                         </button>
                       </div>
@@ -236,16 +235,16 @@ export default function OrdersPage() {
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-between items-center mt-6">
+          <div className="flex justify-between cursor-pointer items-center mt-6">
             <p className="text-sm text-gray-600">Showing 1 to 10 of 249 results</p>
             <div className="flex items-center gap-2">
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <button className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
                 &lt;
               </button>
-              <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium">1</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">2</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">3</button>
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <button className="bg-green-600 text-white px-3 py-2 cursor-pointer rounded-md text-sm font-medium">1</button>
+              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">2</button>
+              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors  cursor-pointer text-sm">3</button>
+              <button className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
                 &gt;
               </button>
             </div>
