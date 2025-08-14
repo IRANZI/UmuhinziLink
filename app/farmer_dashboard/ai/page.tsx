@@ -2,13 +2,7 @@ import React from "react";
 import {
   LayoutGrid,
   BookOpen,
-  Heart,
   MessageSquare,
-  BarChart,
-  Gift,
-  Calendar,
-  ClipboardList,
-  Users,
   Settings,
   LogOut,
   AlertTriangle,
@@ -16,7 +10,6 @@ import {
   Eye,
   Bookmark,
   Droplets,
-  Box,
   FilePlus,
   BarChart2,
   ShoppingCart,
@@ -45,7 +38,7 @@ const tips = [
     title: "Maize Planting Tips",
     date: "Jan 15, 2024",
     description:
-      "Igine cy’iterambere rya ibigori ni ukwezi kwa mbere. Kuragiza ubutaka bwawe kandi ushyire ifumbire y’ibinyobwa mbere yo gutera. Menya ko ubutaka bufite ubushyuhe bukwiye.",
+      "Igihe cy’iterambere rya ibigori ni ukwezi kwa mbere. Kuragiza ubutaka bwawe kandi ushyire ifumbire y’ibinyobwa mbere yo gutera. Menya ko ubutaka bufite ubushyuhe bukwiye.",
     views: 234,
     tags: ["Planting", "Maize"],
     color: "yellow",
@@ -241,7 +234,7 @@ export default function AiDashboard() {
                   className="w-full border border-gray-300 rounded-lg py-2 px-3 text-sm mb-3 placeholder-gray-500"
                   placeholder="Baza ikibazo cyawe mu Kinyarwanda..."
                 />
-                <button className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg w-full text-sm">
+                <button className="bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-lg w-full text-sm  cursor-pointer">
                   Send
                 </button>
                 <div className="text-xs text-gray-500 mt-2">
