@@ -1,9 +1,9 @@
 "use client";
 import React from 'react';
 import { 
-  CheckCircle, LayoutGrid, Heart, MessageSquare, BarChart2, Mail, 
-  ShoppingCart, User, Phone, Settings, LogOut, ShoppingBag, 
-  Clock, Package, Eye, Calendar, Search, ChevronDown, DollarSign,
+  CheckCircle, MessageSquare, Mail, 
+   Phone, Settings, LogOut, ShoppingBag, 
+  Clock,  Eye, Calendar, Search, ChevronDown, DollarSign,
   Apple, Wheat, Bean, Carrot, MessageCircle, RefreshCw,UserIcon,GridIcon,FilePlus
 } from 'lucide-react';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ export default function MyPurchases() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'My Purchase';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 3 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
