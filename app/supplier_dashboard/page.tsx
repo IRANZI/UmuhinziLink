@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   CheckCircle, LayoutGrid, FilePlus, MessageSquare, BarChart2, ShoppingCart, 
-  User, Phone, Settings, LogOut, Mail, TrendingDown, Users, Package, TrendingUp 
+  User, Phone, Settings, LogOut, Mail, TrendingDown, Users, Package, TrendingUp,  
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -16,7 +16,6 @@ const menuItems = [
   { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
   { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
   { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Market Analytics', href: '/supplier_dashboard/market_analysis', icon: BarChart2 },
   { label: 'Message', href: '/messages', icon: Mail },
   { label: 'Profile', href: '/profile', icon: User },
   { label: 'Contact', href: '/contact', icon: Phone },
@@ -40,7 +39,7 @@ export default function Dashboard() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Dashboard';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; 
+              const showDivider = index === 3 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -126,7 +125,7 @@ export default function Dashboard() {
           <div className="bg-white p-6 rounded-lg shadow-sm border mb-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold text-gray-900">New Farmer Requests</h2>
-              <button className="text-green-600 text-sm font-medium hover:text-green-700">View All</button>
+              <button className="text-green-600 text-sm font-medium hover:text-green-700 cursor-pointer">View All</button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -159,10 +158,10 @@ export default function Dashboard() {
                     </td>
                     <td className="py-4 px-4">
                       <div className="flex gap-2">
-                        <button className="bg-green-100 text-green-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-green-200">
+                        <button className="bg-green-100 text-green-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-green-200 cursor-pointer">
                           Approve
                         </button>
-                        <button className="bg-red-100 text-red-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-red-200">
+                        <button className="bg-red-100 text-red-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-red-200 cursor-pointer">
                           Decline
                         </button>
                       </div>
@@ -207,7 +206,7 @@ export default function Dashboard() {
             <div className="bg-white p-6 rounded-lg shadow-sm border">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-bold text-gray-900">Inventory Status</h2>
-                <button className="text-green-600 text-sm font-medium hover:text-green-700">+ Add Product</button>
+                <button className="text-green-600 text-sm font-medium hover:text-green-700 cursor-pointer">+ Add Product</button>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center justify-between py-3">
@@ -262,7 +261,7 @@ export default function Dashboard() {
             <div className="bg-white p-6 rounded-lg shadow-sm border">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-bold text-gray-900">Recent Orders</h2>
-                <button className="text-green-600 text-sm font-medium hover:text-green-700">View All Orders</button>
+                <button className="text-green-600 text-sm font-medium hover:text-green-700 cursor-pointer">View All Orders</button>
               </div>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 border-b border-gray-100">
