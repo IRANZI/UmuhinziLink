@@ -1,7 +1,6 @@
 
 import React from 'react';
-import Image from "next/image";
-import { ShoppingCart, Brain, CreditCard } from "lucide-react";
+import {CheckIcon } from "lucide-react";
 
 const AboutUmuhinzinLink: React.FC = () => {
   return (
@@ -39,7 +38,7 @@ const AboutUmuhinzinLink: React.FC = () => {
         <ul className="space-y-4 mb-8">
           <li className="flex items-start gap-3">
   <span className="inline-block mt-1 w-5 h-5 rounded-full bg-green-600 text-white flex items-center justify-center">
-    <ShoppingCart className="w-4 h-4" />
+    <CheckIcon className="w-4 h-4" />
   </span>
   <div>
     <p className="font-semibold text-gray-700">Market Access</p>
@@ -49,7 +48,7 @@ const AboutUmuhinzinLink: React.FC = () => {
 
           <li className="flex items-start gap-3">
   <span className="inline-block mt-1 w-5 h-5 rounded-full bg-green-600 text-white flex items-center justify-center">
-    <Brain className="w-4 h-4" />
+    <CheckIcon className="w-4 h-4" />
   </span>
   <div>
     <p className="font-semibold text-gray-700">AI-Powered Advice</p>
@@ -59,7 +58,7 @@ const AboutUmuhinzinLink: React.FC = () => {
 
           <li className="flex items-start gap-3">
   <span className="inline-block mt-1 w-5 h-5 rounded-full bg-green-600 text-white flex items-center justify-center">
-    <CreditCard className="w-4 h-4" />
+    <CheckIcon className="w-4 h-4" />
   </span>
   <div>
     <p className="font-semibold text-gray-700">Financial Inclusion</p>
@@ -68,7 +67,7 @@ const AboutUmuhinzinLink: React.FC = () => {
 </li>
         </ul>
 
-        <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+        <button className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition cursor-pointer">
           Learn More
         </button>
       </div>

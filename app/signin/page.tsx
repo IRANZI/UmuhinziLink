@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -90,7 +90,7 @@ export default function SignIn() {
               <button
                 type="button"
                 onClick={() => setSignInMethod('phone')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors ${
+                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors cursor-pointer ${
                   signInMethod === 'phone'
                     ? 'bg-gray-100 text-gray-900 border-r'
                     : 'bg-white text-gray-600 hover:bg-gray-50 border-r'
@@ -102,7 +102,7 @@ export default function SignIn() {
               <button
                 type="button"
                 onClick={() => setSignInMethod('email')}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors ${
+                className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 text-sm font-medium transition-colors cursor-pointer ${
                   signInMethod === 'email'
                     ? 'bg-gray-100 text-gray-900'
                     : 'bg-white text-gray-600 hover:bg-gray-50'
@@ -149,7 +149,7 @@ export default function SignIn() {
             
             <button
               type="submit"
-              className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
+              className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors cursor-pointer"
             >
               {signInMethod === 'phone' ? 'Send OTP' : 'Sign In'}
             </button>
@@ -158,7 +158,7 @@ export default function SignIn() {
             <div className="text-center">
               <span className="text-sm text-gray-600">
                 Don't have an account?{' '}
-                <Link href="/signup" className="text-green-600 hover:text-green-700 font-medium">
+                <Link href="/signup" className="text-green-600 hover:text-green-700 font-medium cursor-pointer">
                   Sign Up
                 </Link>
               </span>

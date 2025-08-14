@@ -16,7 +16,7 @@ export default function CallToAction() {
         {buttons.map((btn, idx) => (
           <button
             key={idx}
-            className={`flex items-center gap-2 px-5 py-2 rounded-lg shadow ${btn.color}`}
+            className={`flex items-center gap-2 px-5 py-2 rounded-lg shadow cursor-pointer ${btn.color}`}
           >
             <btn.icon className="w-5 h-5" />
             {btn.text}

@@ -1,4 +1,5 @@
 "use client";
+import {Leaf} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,8 +16,8 @@ export default function Footer() {
 
         {/* About */}
         <div>
-          <p className="font-semibold text-white">About</p>
-          <ul className="mt-2 space-y-1">
+          <p className="font-semibold text-white ">About</p>
+          <ul className="mt-2 space-y-1 cursor-pointer">
             <li>Our Mission</li>
             <li>Team</li>
             <li>Partners</li>
@@ -27,7 +28,7 @@ export default function Footer() {
         {/* Support */}
         <div>
           <p className="font-semibold text-white">Support</p>
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2 space-y-1  cursor-pointer">
             <li>Help Center</li>
             <li>Contact Us</li>
             <li>SMS Support</li>
@@ -37,9 +38,9 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div>
-          <p className="font-semibold text-white">Contact Info</p>
+          <p className="font-semibold text-white ">Contact Info</p>
           <ul className="mt-2 space-y-2">
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-2 ">
               <PhoneIcon className="w-5 h-5" /> +250 788 123 456
             </li>
             <li className="flex items-center gap-2">
@@ -50,13 +51,13 @@ export default function Footer() {
             </li>
           </ul>
           <div className="flex gap-2 mt-3">
-            <button className="px-3 py-1 bg-gray-800 rounded text-sm">English</button>
-            <button className="px-3 py-1 bg-green-600 rounded text-sm text-white">Kinyarwanda</button>
+            <button className="px-3 py-1 bg-gray-800 rounded text-sm cursor-pointer">English</button>
+            <button className="px-3 py-1 bg-green-600 rounded text-sm text-white  cursor-pointer">Kinyarwanda</button>
           </div>
         </div>
       </div>
       <p className="text-center text-xs text-gray-500 mt-6">
-        © 2024 UmuhinziLink. All rights reserved. Built for Rwandan farmers with ❤️
+        © 2025 UmuhinziLink. All rights reserved. Built for Rwandan farmers with ❤️
       </p>
     </footer>
   );
