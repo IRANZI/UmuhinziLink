@@ -85,12 +85,13 @@ export default function AiDashboard() {
   return (
     <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-white border-b h-16 flex items-center justify-between px-4 sm:px-8 shadow-sm">
+      <header className="sticky top-0 z-50 bg-white border-b h-16 flex items-center justify-between px-4 sm:px-6 shadow-sm">
         <span className="font-extrabold text-xl sm:text-2xl tracking-tight">
           <span className="text-green-700">Umuhinzi</span>
           <span className="text-black">Link</span>
         </span>
         <button
+          aria-label="Toggle menu"
           className="sm:hidden p-2 rounded-lg hover:bg-gray-100"
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
@@ -101,9 +102,10 @@ export default function AiDashboard() {
       <div className="flex flex-1 min-h-0">
         {/* Sidebar */}
         <aside
-          className={`bg-white border-r flex flex-col fixed sm:static sm:translate-x-0 top-16 sm:top-0 left-0 h-[calc(100vh-4rem)] sm:h-auto overflow-y-auto w-64 z-40 transition-transform transform ${
+          className={`bg-white border-r fixed top-0 sm:top-0 left-0 h-screen overflow-y-auto w-56 z-40 transition-transform transform sm:translate-x-0 ${
             sidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
+          style={{ paddingTop: "4rem" }} // space for header overlay
         >
           <nav className="flex-1 px-4 py-4 space-y-2">
             {menuItems.map((m, index) => {
@@ -113,7 +115,7 @@ export default function AiDashboard() {
                 <div key={m.label}>
                   <Link href={m.href} className="block">
                     <div
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all text-sm font-medium ${
+                      className={`flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer transition-all text-sm font-medium ${
                         isActive
                           ? "bg-green-600 text-white shadow-sm"
                           : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
@@ -123,7 +125,7 @@ export default function AiDashboard() {
                       <span>{m.label}</span>
                     </div>
                   </Link>
-                  {showDivider && <div className="border-t border-gray-200 my-2 mx-4"></div>}
+                  {showDivider && <div className="border-t border-gray-200 my-2 mx-3"></div>}
                 </div>
               );
             })}
@@ -131,7 +133,7 @@ export default function AiDashboard() {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 sm:p-6 overflow-auto sm:ml-64 space-y-6 bg-gray-50">
+        <main className="flex-1 p-4 sm:p-5 overflow-auto sm:ml-[13rem] space-y-6 bg-gray-50">
           {/* Search & Filters */}
           <div className="flex flex-wrap gap-3 mb-6">
             <input
