@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
-  LayoutGrid, Box, FilePlus, MessageSquare, BarChart2, ShoppingCart, 
-  User, Phone, Settings, LogOut, CheckCircle, Clock, DollarSign, Mail 
+  LayoutGrid,
+   FilePlus, MessageSquare, BarChart2, ShoppingCart, 
+  User, Phone, Settings, LogOut, CheckCircle, Mail 
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -81,11 +82,11 @@ const Dashboard = () => {
           {/* Page Title & Subtitle */}
           <header className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-xl font-bold mb-1 text-gray-900">Input Credit Requests</h1>
+              <h1 className="text-xl font-bold mb-1 text-gray-900 ">Input Credit Requests</h1>
               <p className="text-gray-500 text-sm">Manage your credit requests for seeds, fertilizers, and other inputs</p>
             </div>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded shadow flex items-center gap-2">
-              <span className="text-lg ">+</span> Request New Credit
+            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded shadow flex items-center gap-2  cursor-pointer">
+              <span className="text-lg  ">+</span> Request New Credit
             </button>
           </header>
 
@@ -162,9 +163,9 @@ const Dashboard = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <button className="text-blue-600 hover:underline">View</button>
-                      {request.status === "Pending" && <button className="ml-4 text-red-600 hover:underline">Cancel</button>}
-                      {request.status === "Rejected" && <button className="ml-4 text-yellow-600 hover:underline">Resubmit</button>}
+                      <button className="text-blue-600 hover:underline  cursor-pointer">View</button>
+                      {request.status === "Pending" && <button className="ml-4 text-red-600 hover:underline  cursor-pointer">Cancel</button>}
+                      {request.status === "Rejected" && <button className="ml-4 text-yellow-600 hover:underline  cursor-pointer">Resubmit</button>}
                     </td>
                   </tr>
                 ))}
