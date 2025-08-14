@@ -4,6 +4,7 @@ import {
   User, Phone, Settings, LogOut, Mail, Pencil, Trash2, Plus, Search, ChevronDown 
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image"; 
 
 const Logo = () => (
   <span className="font-extrabold text-2xl tracking-tight">
@@ -15,8 +16,7 @@ const menuItems = [
   { label: 'Dashboard', href: '/supplier_dashboard', icon: CheckCircle },
   { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
   { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
-  { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Market Analytics', href: '/supplier_dashboard/market_analysis', icon: BarChart2 },
+  { label: 'Orders', href: '/supplier_dashboard/orders', icon: ShoppingCart },
   { label: 'Message', href: '/messages', icon: Mail },
   { label: 'Profile', href: '/profile', icon: User },
   { label: 'Contact', href: '/contact', icon: Phone },
@@ -24,16 +24,15 @@ const menuItems = [
   { label: 'Logout', href: '/logout', icon: LogOut },
 ];
 
-
 const inputs = [
-  { id: 1, name: "Premium Corn Seeds", category: "Seeds", price: 45.0, stock: 150, status: "In Stock", image: "/corn-seeds.jpg" },
-  { id: 2, name: "NPK Fertilizer", category: "Fertilizers", price: 32.5, stock: 8, status: "Low Stock", image: "/npk-fertilizer.jpg" },
-  { id: 3, name: "Garden Hoe", category: "Tools", price: 28.0, stock: 45, status: "In Stock", image: "/garden-hoe.jpg" },
-  { id: 4, name: "Tomato Seeds", category: "Seeds", price: 12.75, stock: 0, status: "Out of Stock", image: "/tomato-seeds.jpg" },
-  { id: 5, name: "Organic Pesticide", category: "Pesticides", price: 22.9, stock: 67, status: "In Stock", image: "/organic-pesticide.jpg" },
-  { id: 6, name: "Wheat Seeds", category: "Seeds", price: 38.2, stock: 12, status: "Low Stock", image: "/wheat-seeds.jpg" },
-  { id: 7, name: "Watering Can", category: "Tools", price: 15.5, stock: 89, status: "In Stock", image: "/watering-can.jpg" },
-  { id: 8, name: "Organic Compost", category: "Fertilizers", price: 19.99, stock: 0, status: "Out of Stock", image: "/organic-compost.jpg" },
+  { id: 1, name: "Premium Corn Seeds", category: "Seeds", price: 45.0, stock: 150, status: "In Stock", image: "/corn-seeds.png" },
+  { id: 2, name: "NPK Fertilizer", category: "Fertilizers", price: 32.5, stock: 8, status: "Low Stock", image: "/npk-fertilizer.png" },
+  { id: 3, name: "Garden Hoe", category: "Tools", price: 28.0, stock: 45, status: "In Stock", image: "/garden-hoe.png" },
+  { id: 4, name: "Tomato Seeds", category: "Seeds", price: 12.75, stock: 0, status: "Out of Stock", image: "/tomato-seeds.png" },
+  { id: 5, name: "Organic Pesticide", category: "Pesticides", price: 22.9, stock: 67, status: "In Stock", image: "/organic-pesticide.png" },
+  { id: 6, name: "Wheat Seeds", category: "Seeds", price: 38.2, stock: 12, status: "Low Stock", image: "/wheat-seeds.png" },
+  { id: 7, name: "Watering Can", category: "Tools", price: 15.5, stock: 89, status: "In Stock", image: "/watering-can.png" },
+  { id: 8, name: "Organic Compost", category: "Fertilizers", price: 19.99, stock: 0, status: "Out of Stock", image: "/organic-compost.png" },
 ];
 
 export default function ProductsPage() {
@@ -42,7 +41,7 @@ export default function ProductsPage() {
       {/* Header */}
       <header className="sticky top-0 z-30 bg-white border-b h-16 flex items-center justify-between px-8 shadow-sm">
         <Logo />
-        <button className="bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
+        <button className="bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors cursor-pointer">
           <Plus className="w-4 h-4" />
           Add New Input
         </button>
@@ -53,9 +52,9 @@ export default function ProductsPage() {
         <aside className="w-64 bg-white border-r flex flex-col">
           <nav className="flex-1 px-4 py-6 space-y-2">
             {menuItems.map((item, index) => {
-              const isActive = item.label === 'My Products';
+              const isActive = item.label === 'My Inputs';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; 
+              const showDivider = index === 3 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -86,15 +85,15 @@ export default function ProductsPage() {
               <input
                 type="text"
                 placeholder="Search your product..."
-                className="w-full bg-white border border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full bg-white border text-gray-600 border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <div className="flex gap-3">
-              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer">
                 All Categories
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors cursor-pointer">
                 All Stock Levels
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -106,8 +105,15 @@ export default function ProductsPage() {
             {inputs.map((item) => (
               <div key={item.id} className="bg-white rounded-lg shadow-sm border overflow-hidden hover:shadow-md transition-shadow">
                 <div className="relative">
-                  <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
-                    <div className="text-gray-400 text-sm">Product Image</div>
+                  {/* ✅ Display product image */}
+                  <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={300}
+                      height={200}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div
                     className={`absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-medium ${
@@ -139,11 +145,11 @@ export default function ProductsPage() {
                     </p>
                   </div>
                   <div className="flex gap-2 mt-4">
-                    <button className="flex-1 bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm flex items-center justify-center gap-1 hover:bg-gray-200 transition-colors">
+                    <button className="flex-1 bg-gray-100 text-gray-700 px-3 py-2 rounded-md text-sm flex items-center justify-center gap-1 hover:bg-gray-200 transition-colors cursor-pointer">
                       <Pencil className="w-4 h-4" />
                       Edit
                     </button>
-                    <button className="bg-red-100 text-red-700 p-2 rounded-md hover:bg-red-200 transition-colors">
+                    <button className="bg-red-100 text-red-700 p-2 rounded-md hover:bg-red-200 transition-colors cursor-pointer">
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
@@ -159,10 +165,10 @@ export default function ProductsPage() {
               <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
                 &lt;
               </button>
-              <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium">1</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">2</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">3</button>
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer">1</button>
+              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">2</button>
+              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">3</button>
+              <button className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
                 &gt;
               </button>
             </div>
