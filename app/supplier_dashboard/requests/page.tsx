@@ -18,7 +18,6 @@ const menuItems = [
   { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
   { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
   { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Market Analytics', href: '/supplier_dashboard/market_analysis', icon: BarChart2 },
   { label: 'Message', href: '/messages', icon: Mail },
   { label: 'Profile', href: '/profile', icon: User },
   { label: 'Contact', href: '/contact', icon: Phone },
@@ -40,9 +39,9 @@ export default function FarmerRequests() {
         <aside className="w-64 bg-white border-r flex flex-col fixed left-0 top-16 h-[calc(100vh-4rem)] overflow-y-auto">
           <nav className="flex-1 px-4 py-6 space-y-2">
             {menuItems.map((item, index) => {
-              const isActive = item.label === 'Input Request';
+              const isActive = item.label === 'Farmer Request';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; 
+              const showDivider = index === 3 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -73,11 +72,11 @@ export default function FarmerRequests() {
               <p className="text-gray-600">Manage and respond to farmer purchase and credit requests</p>
             </div>
             <div className="flex gap-3">
-              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              <button className="bg-white border cursor-pointer border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
                 All Requests
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <button className="bg-green-600 text-white font-medium py-2.5 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
+              <button className="bg-green-600 text-white  cursor-pointer font-medium py-2.5 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
                 <Download className="w-4 h-4" />
                 Export
               </button>
@@ -139,15 +138,15 @@ export default function FarmerRequests() {
               <input
                 type="text"
                 placeholder="Search by farmer name or item..."
-                className="w-full bg-white border border-gray-300 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full bg-white border border-gray-300 text-gray-600 rounded-lg py-2.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
             <div className="flex gap-3">
-              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              <button className="bg-white border cursor-pointer border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
                 All Types
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <button className="bg-white border border-gray-300 text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
+              <button className="bg-white border border-gray-300 cursor-pointer text-gray-700 rounded-lg py-2.5 px-4 text-sm flex items-center gap-2 hover:bg-gray-50 transition-colors">
                 All Status
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -193,13 +192,13 @@ export default function FarmerRequests() {
                     </td>
                     <td className="py-4 px-4">
                       <div className="flex gap-2">
-                        <button className="bg-green-100 text-green-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-green-200 transition-colors">
+                        <button className="bg-green-100 cursor-pointer text-green-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-green-200 transition-colors">
                           ✓ Approve
                         </button>
-                        <button className="bg-red-100 text-red-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-red-200 transition-colors">
+                        <button className="bg-red-100 cursor-pointer text-red-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-red-200 transition-colors">
                           ✗ Decline
                         </button>
-                        <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-blue-200 transition-colors">
+                        <button className="bg-blue-100 cursor-pointer text-blue-700 px-3 py-1 rounded-md text-xs font-medium hover:bg-blue-200 transition-colors">
                           ↗ Offer
                         </button>
                       </div>
@@ -274,13 +273,13 @@ export default function FarmerRequests() {
           <div className="flex justify-between items-center mt-6">
             <p className="text-sm text-gray-600">Showing 1 to 10 of 47 results</p>
             <div className="flex items-center gap-2">
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <button className="p-2 text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">
                 &lt;
               </button>
-              <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium">1</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">2</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 transition-colors text-sm">3</button>
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <button className="bg-green-600 text-white px-3 py-2 rounded-md  cursor-pointertext-sm font-medium">1</button>
+              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">2</button>
+              <button className="px-3 py-2 text-gray-600 cursor-pointer hover:text-gray-900 transition-colors text-sm">3</button>
+              <button className="p-2 text-gray-400 cursor-pointer hover:text-gray-600 transition-colors">
                 &gt;
               </button>
             </div>
