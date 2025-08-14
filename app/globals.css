@@ -24,8 +24,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
-  font-size: 18px; 
-  line-height: 1.7; 
+  font-size: 18px; /* Good for apps */
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,6 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -40,7 +41,7 @@ p {
 }
 
 a {
-  color: #2563eb;
+  color: #2563eb; /* Tailwind's blue-600 */
   text-decoration: none;
 }
 

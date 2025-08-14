@@ -32,10 +32,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="bg-gray-50 text-gray-900 font-sans leading-relaxed">
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {children}
-        </main>
+      <body className="bg-gray-50 text-gray-900 font-sans text-lg">
+        {/* Full-width container for app layout */}
+        <div className="min-h-screen flex flex-col">
+          {/* Main content */}
+          <main className="flex-1 p-6">{children}</main>
+        </div>
       </body>
     </html>
   );
