@@ -121,7 +121,7 @@ const recommendations = [
   },
 ];
 
-// Sample chart data
+
 const priceData = [
   { month: "Jan", price: 250000 },
   { month: "Feb", price: 230000 },
@@ -160,7 +160,7 @@ const Dashboard = () => {
           <nav className="flex-1 px-4 space-y-2">
             {menuItems.map((m, index) => {
               const isActive = m.label === "Market Analytics";
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8;
               return (
                 <div key={m.label}>
                   <Link href={m.href} className="block">

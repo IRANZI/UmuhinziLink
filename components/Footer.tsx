@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 py-20">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
         
-        {/* Logo & Description */}
+        {/* Logo and  Description */}
         <div>
           <p className="font-bold text-white">🌱 UmuhinziLink</p>
           <p className="mt-2 text-sm">

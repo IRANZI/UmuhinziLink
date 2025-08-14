@@ -26,7 +26,7 @@ export default function SignUp() {
   });
 
   const handleUserTypeChange = (userType: string) => {
-    // Allow switching between all roles without navigation
+    // Roles
     setSelectedUserType(userType);
   };
 
@@ -40,13 +40,13 @@ export default function SignUp() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    
     console.log('Form submitted:', { ...formData, userType: selectedUserType });
     
-    // Store user role in localStorage for signin redirect
+    
     localStorage.setItem('userRole', selectedUserType);
     
-    // Redirect to signin page after successful signup
+  
     router.push('/signin?from=signup');
   };
 
@@ -63,13 +63,13 @@ export default function SignUp() {
         {/* Form */}
         <div className="bg-white rounded-lg shadow-sm border p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* New Account Header */}
+           
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">New Account</h3>
               <p className="text-sm text-gray-600 mb-6">Choose your user type and fill in information</p>
             </div>
 
-            {/* User Type Selection */}
+            
             <div>
               <h4 className="text-sm font-medium text-gray-900 mb-4">Choose your user type</h4>
               <div className="space-y-3">
@@ -226,7 +226,7 @@ export default function SignUp() {
               </div>
             </div>
 
-            {/* Business Information Section - Only show for suppliers and buyers */}
+            {/* Business Information Section For Only show for suppliers and buyers */}
             {(selectedUserType === 'supplier' || selectedUserType === 'buyer') && (
               <div className="pt-4 border-t border-gray-200">
                 <h4 className="text-sm font-medium text-gray-900 mb-4">Business Information</h4>
@@ -286,7 +286,7 @@ export default function SignUp() {
               </label>
             </div>
 
-            {/* Submit Button */}
+            
             <button
               type="submit"
               className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
@@ -294,7 +294,7 @@ export default function SignUp() {
               Sign Up
             </button>
 
-            {/* Sign In Link */}
+            
             <div className="text-center">
               <span className="text-sm text-gray-600">
                 Already have an account?{' '}

@@ -1,4 +1,4 @@
-// components/HowItWorks.tsx
+
 import { FC } from "react";
 
 interface Step {

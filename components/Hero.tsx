@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image Placeholder */}
+       
         <div className="flex justify-center">
           
             <img  className = 'w-xl' src='/hero.png'/>

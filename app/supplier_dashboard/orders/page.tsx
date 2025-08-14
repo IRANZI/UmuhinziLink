@@ -43,7 +43,7 @@ export default function OrdersPage() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Orders';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -79,7 +79,7 @@ export default function OrdersPage() {
             </button>
           </div>
 
-          {/* Stats Cards */}
+          {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <div className="bg-white p-6 rounded-lg shadow-sm border">
               <div className="flex items-center gap-4">
@@ -145,7 +145,7 @@ export default function OrdersPage() {
             </div>
           </div>
 
-          {/* Orders Table */}
+          {/* Order */}
           <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">

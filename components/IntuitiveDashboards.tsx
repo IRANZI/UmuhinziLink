@@ -1,4 +1,4 @@
-// components/IntuitiveDashboards.tsx
+
 import { FC, JSX } from "react";
 import {
   Home,

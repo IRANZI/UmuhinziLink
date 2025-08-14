@@ -40,7 +40,7 @@ export default function Dashboard() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Dashboard';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -201,7 +201,7 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Inventory + Orders side-by-side */}
+          {/* Inventory and Orders  */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Inventory Status */}
             <div className="bg-white p-6 rounded-lg shadow-sm border">

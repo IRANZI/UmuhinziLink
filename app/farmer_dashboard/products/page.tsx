@@ -1,4 +1,4 @@
-// pages/products.tsx
+
 "use client";
 
 import { usePathname } from 'next/navigation';
@@ -57,7 +57,7 @@ export default function Products() {
             <nav className="mt-4 space-y-2 px-4">
               {menuItems.map((m, index) => {
                 const isActive = pathname === m.href;
-                const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+                const showDivider = index === 4 || index === 8; 
                 return (
                   <div key={m.label}>
                     <Link href={m.href} className="block">

@@ -42,7 +42,7 @@ export default function FarmerRequests() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Input Request';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -132,7 +132,7 @@ export default function FarmerRequests() {
             </div>
           </div>
 
-          {/* Search + Filters */}
+          {/* Search and  Filters */}
           <div className="flex justify-between items-center mb-6 gap-4">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />

@@ -26,7 +26,7 @@ export default function BusinessSignUp() {
     agreeToTerms: false
   });
 
-  // Set user type based on URL parameter
+  // User Role
   useEffect(() => {
     const type = searchParams.get('type');
     if (type === 'supplier' || type === 'buyer') {
@@ -44,13 +44,13 @@ export default function BusinessSignUp() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    // Handling form submission
     console.log('Form submitted:', { ...formData, userType: selectedUserType });
     
-    // Store user role in localStorage for signin redirect
+   
     localStorage.setItem('userRole', selectedUserType);
     
-    // Redirect to signin page after successful signup
+    
     router.push('/signin?from=signup');
   };
 
@@ -142,7 +142,7 @@ export default function BusinessSignUp() {
               </div>
             </div>
 
-            {/* Form Fields */}
+            {/* Form  */}
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -288,7 +288,7 @@ export default function BusinessSignUp() {
               </label>
             </div>
 
-            {/* Submit Button */}
+           
             <button
               type="submit"
               className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
@@ -296,7 +296,7 @@ export default function BusinessSignUp() {
               Sign Up
             </button>
 
-            {/* Sign In Link */}
+            
             <div className="text-center">
               <span className="text-sm text-gray-600">
                 Already have an account?{' '}

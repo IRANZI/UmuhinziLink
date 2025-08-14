@@ -55,7 +55,7 @@ export default function ProductsPage() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'My Products';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">

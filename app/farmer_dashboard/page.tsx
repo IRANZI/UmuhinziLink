@@ -7,7 +7,7 @@ import {
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import Link from 'next/link';
 
-// Sidebar menu items
+//menu items
 const menuItems = [
   { label: 'Dashboard', href: '/farmer_dashboard', icon: CheckCircle },
   { label: 'My Products', href: '/farmer_dashboard/products', icon: LayoutGrid },
@@ -22,7 +22,7 @@ const menuItems = [
   { label: 'Logout', href: '/logout', icon: LogOut },
 ];
 
-// Generate market chart data
+//chart data
 const chartData = Array.from({ length: 12 }).map((_, i) => ({
   name: `${(i + 1) * 5}k`,
   value: Math.round(20 + Math.sin(i / 2) * 5 + Math.random() * 4)
@@ -55,7 +55,7 @@ export default function Dashboard() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Dashboard';
               const Icon = item.icon;
-              const showDivider = index === 4 || index === 8; // After Market Analytics and Contact
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">

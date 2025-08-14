@@ -1,13 +1,13 @@
-// components/AboutUmunhzinLink.tsx
+
 import React from 'react';
 import Image from "next/image";
 import { ShoppingCart, Brain, CreditCard } from "lucide-react";
 
-const AboutUmunhzinLink: React.FC = () => {
+const AboutUmuhinzinLink: React.FC = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto px-6 md:px-12 py-12 gap-36">
       
-      {/* Left side images */}
+      {/* Left side*/}
       <div className="relative flex-shrink-0">
         <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full overflow-hidden">
           <img
@@ -26,7 +26,7 @@ const AboutUmunhzinLink: React.FC = () => {
         </div>
       </div>
 
-      {/* Right side text */}
+      {/* Right side */}
       <div className="max-w-xl">
         <p className="text-sm text-green-600 font-semibold mb-2 border border-gray-300  w-52 px-5 py-2 rounded-md">About UmuhinzinLink</p>
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
@@ -76,4 +76,4 @@ const AboutUmunhzinLink: React.FC = () => {
   );
 };
 
-export default AboutUmunhzinLink;
+export default AboutUmuhinzinLink;

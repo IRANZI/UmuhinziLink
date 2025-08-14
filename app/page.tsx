@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import "./section-animations.css";
 import Hero from "@/components/Hero";
-import AboutUmunhzinLink from "@/components/AboutUmunhzinLink";
+import AboutUmuhinzinLink from "@/components/AboutUmunhzinLink";
 import WhoWeServe from "@/components/WhoWeServe";
 import PlatformFeatures from "@/components/PlatformFeatures";
 import HowItWorks from "@/components/HowItWorks";
@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
       </section>
       <section id="features" className="section-fade-up section-delay-2">
-        <AboutUmunhzinLink/>
+        <AboutUmuhinzinLink/>
         <WhoWeServe/>
         <PlatformFeatures/>
       </section>

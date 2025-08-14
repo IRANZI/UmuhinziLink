@@ -39,30 +39,30 @@ export default function SignIn() {
         router.push('/buyer_dashboard');
         break;
       default:
-        router.push('/farmer_dashboard'); // Default fallback
+        router.push('/farmer_dashboard'); 
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Get user role from localStorage (set during signup)
+    // Roles
     const userRole = localStorage.getItem('userRole') || 'farmer';
     
     if (signInMethod === 'phone') {
-      // Handle phone sign in - send OTP
+      // OTP
       console.log('Sending OTP to:', formData.phoneNumber);
-      // Simulate successful OTP verification and redirect
+      
       setTimeout(() => {
         redirectToDashboard(userRole);
-      }, 1000); // Simulate OTP verification delay
+      }, 1000);
     } else {
-      // Handle email sign in
+      // email 
       console.log('Signing in with email:', formData.email);
-      // Simulate successful email sign in and redirect
+      
       setTimeout(() => {
         redirectToDashboard(userRole);
-      }, 500); // Simulate sign in delay
+      }, 500); 
     }
   };
 
@@ -79,13 +79,13 @@ export default function SignIn() {
         {/* Form */}
         <div className="bg-white rounded-lg shadow-sm border p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Sign In Header */}
+           
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Sign In</h3>
               <p className="text-sm text-gray-600 mb-6">Choose how you want to sign in your account</p>
             </div>
 
-            {/* Sign In Method Selection */}
+           
             <div className="flex rounded-lg border overflow-hidden">
               <button
                 type="button"
@@ -113,7 +113,7 @@ export default function SignIn() {
               </button>
             </div>
 
-            {/* Form Fields */}
+            {/* Form */}
             {signInMethod === 'phone' ? (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -146,7 +146,7 @@ export default function SignIn() {
               </div>
             )}
 
-            {/* Submit Button */}
+            
             <button
               type="submit"
               className="w-full bg-green-600 text-white py-3 px-4 rounded-md font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
@@ -154,7 +154,7 @@ export default function SignIn() {
               {signInMethod === 'phone' ? 'Send OTP' : 'Sign In'}
             </button>
 
-            {/* Sign Up Link */}
+            
             <div className="text-center">
               <span className="text-sm text-gray-600">
                 Don't have an account?{' '}
