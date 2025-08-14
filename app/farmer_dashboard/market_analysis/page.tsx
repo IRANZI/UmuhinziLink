@@ -4,9 +4,9 @@ import React from "react";
 
 import {
   LayoutGrid,
-  Box,
+ 
   FilePlus,
-  Sparkles,
+  
   BarChart2,
   MessageSquare,
   ShoppingCart,
@@ -106,20 +106,8 @@ const demandOverview = [
   },
 ];
 
-const recommendations = [
-  {
-    title: "Best Time to Sell",
-    description: "Based on current trends, the optimal selling window for your maize is in the next 2-3 weeks.",
-    confidence: "85%",
-    icon: "💡",
-  },
-  {
-    title: "Best Market",
-    description: "Kigali Agro Market offers the highest prices for maize currently at 450 RWF/kg.",
-    distance: "23km from you",
-    icon: "📍",
-  },
-];
+
+
 
 
 const priceData = [
@@ -190,19 +178,19 @@ const Dashboard = () => {
                 <Filter className="w-4 h-4 text-gray-500" />
                 <span className="font-medium text-gray-700">Filters:</span>
               </div>
-              <select className="border border-gray-300 rounded-lg py-2 px- text-sm bg-white">
+              <select className="border border-gray-300 rounded-lg py-2 px- text-sm bg-white text-gray-700 cursor-pointer">
                 <option>All Crops</option>
                 <option>Maize</option>
                 <option>Beans</option>
                 <option>Bananas</option>
               </select>
-              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white">
+              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white text-gray-700 cursor-pointer">
                 <option>All Regions</option>
                 <option>Kigali City</option>
                 <option>Huye District</option>
                 <option>Musanze District</option>
               </select>
-              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white">
+              <select className="border border-gray-300 rounded-lg py-2 px-3 text-sm bg-white text-gray-700 cursor-pointer">
                 <option>Last 30 Days</option>
                 <option>Last 7 Days</option>
                 <option>Last 90 Days</option>
