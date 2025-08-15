@@ -14,15 +14,17 @@ const Logo = () => (
 );
 
 const menuItems = [
-  { label: 'Dashboard', href: '/supplier_dashboard', icon: CheckCircle },
-  { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
-  { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
-  { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Message', href: '/messages', icon: Mail },
-  { label: 'Profile', href: '/profile', icon: User },
-  { label: 'Contact', href: '/contact', icon: Phone },
-  { label: 'Settings', href: '/settings', icon: Settings },
-  { label: 'Logout', href: '/logout', icon: LogOut },
+  { label: "Dashboard", href: "/farmer_dashboard", icon: CheckCircle },
+  { label: "My Products", href: "/farmer_dashboard/products", icon: LayoutGrid },
+  { label: "Input Request", href: "/farmer_dashboard/requests", icon: FilePlus },
+  { label: "AI Tips", href: "/farmer_dashboard/ai", icon: MessageSquare },
+  { label: "Market Analytics", href: "/farmer_dashboard/market_analysis", icon: BarChart2 },
+  { label: "Message", href: "/farmer_dashboard/message", icon: Mail },
+  { label: "Orders", href: "/farmer_dashboard/orders", icon: ShoppingCart },
+  { label: "Profile", href: "/farmer_dashboard/profile", icon: User },
+  { label: "Contact", href: "/farmer_dashboard/contact", icon: Phone },
+  { label: "Settings", href: "/farmer_dashboard/settings", icon: Settings },
+  { label: "Logout", href: "/logout", icon: LogOut },
 ];
 
 
@@ -42,7 +44,7 @@ export default function OrdersPage() {
             {menuItems.map((item, index) => {
               const isActive = item.label === 'Orders';
               const Icon = item.icon;
-              const showDivider = index === 3 || index === 8; 
+              const showDivider = index === 4 || index === 8; 
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
@@ -70,12 +72,9 @@ export default function OrdersPage() {
           <div className="flex justify-between items-start mb-6">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Orders</h1>
-              <p className="text-gray-600">Manage your order requests for seeds, fertilizers, and other inputs</p>
+              <p className="text-gray-600">Manage your order request of you produce </p>
             </div>
-            <button className="bg-green-600 text-white cursor-pointer font-medium py-2.5 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors">
-              <Plus className="w-4 h-4" />
-              New Order
-            </button>
+            
           </div>
 
           {/* Cards */}

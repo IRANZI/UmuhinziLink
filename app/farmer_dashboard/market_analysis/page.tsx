@@ -41,11 +41,11 @@ const menuItems = [
   { label: "Input Request", href: "/farmer_dashboard/requests", icon: FilePlus },
   { label: "AI Tips", href: "/farmer_dashboard/ai", icon: MessageSquare },
   { label: "Market Analytics", href: "/farmer_dashboard/market_analysis", icon: BarChart2 },
-  { label: "Message", href: "/messages", icon: Mail },
-  { label: "Orders", href: "/orders", icon: ShoppingCart },
-  { label: "Profile", href: "/profile", icon: User },
-  { label: "Contact", href: "/contact", icon: Phone },
-  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Message", href: "/farmer_dashboard/message", icon: Mail },
+  { label: "Orders", href: "/farmer_dashboard/orders", icon: ShoppingCart },
+  { label: "Profile", href: "/farmer_dashboard/profile", icon: User },
+  { label: "Contact", href: "/farmer_dashboard/contact", icon: Phone },
+  { label: "Settings", href: "/farmer_dashboard/settings", icon: Settings },
   { label: "Logout", href: "/logout", icon: LogOut },
 ];
 
