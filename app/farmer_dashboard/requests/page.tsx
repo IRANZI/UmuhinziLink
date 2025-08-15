@@ -19,11 +19,11 @@ const Dashboard = () => {
     { label: 'Input Request', href: '/farmer_dashboard/requests', icon: FilePlus },
     { label: 'AI Tips', href: '/farmer_dashboard/ai', icon: MessageSquare },
     { label: 'Market Analytics', href: '/farmer_dashboard/market_analysis', icon: BarChart2 },
-    { label: 'Message', href: '/messages', icon: Mail },
-    { label: 'Orders', href: '/orders', icon: ShoppingCart },
-    { label: 'Profile', href: '/profile', icon: User },
-    { label: 'Contact', href: '/contact', icon: Phone },
-    { label: 'Settings', href: '/settings', icon: Settings },
+    { label: 'Message', href: '/farmer_dashboard/message', icon: Mail },
+    { label: 'Orders', href: '/farmer_dashboard/orders', icon: ShoppingCart },
+    { label: 'Profile', href: '/farmer_dashboard/profile', icon: User },
+    { label: 'Contact', href: '/farmer_dashboard/contact', icon: Phone },
+    { label: 'Settings', href: '/farmer_dashboard/settings', icon: Settings },
     { label: 'Logout', href: '/logout', icon: LogOut },
   ];
 
@@ -85,9 +85,11 @@ const Dashboard = () => {
               <h1 className="text-xl font-bold mb-1 text-gray-900 ">Input Credit Requests</h1>
               <p className="text-gray-500 text-sm">Manage your credit requests for seeds, fertilizers, and other inputs</p>
             </div>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded shadow flex items-center gap-2  cursor-pointer">
-              <span className="text-lg  ">+</span> Request New Credit
-            </button>
+            <Link href="/farmer_dashboard/new_request">
+  <button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded shadow flex items-center gap-2 cursor-pointer">
+    <span className="text-lg">+</span> Request New Credit
+  </button>
+</Link>
           </header>
 
          {/* Summary Cards */}

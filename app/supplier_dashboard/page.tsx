@@ -16,10 +16,10 @@ const menuItems = [
   { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
   { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
   { label: 'Orders', href: '/supplier_dashboard/orders',icon: ShoppingCart },
-  { label: 'Message', href: '/messages', icon: Mail },
-  { label: 'Profile', href: '/profile', icon: User },
-  { label: 'Contact', href: '/contact', icon: Phone },
-  { label: 'Settings', href: '/settings', icon: Settings },
+  { label: 'Message', href: '/supplier_dashboard/message', icon: Mail },
+  { label: 'Profile', href: '/supplier_dashboard/profile', icon: User },
+  { label: 'Contact', href: '/supplier_dashboard/contact', icon: Phone },
+  { label: 'Settings', href: '/supplier_dashboard/settings', icon: Settings },
   { label: 'Logout', href: '/logout', icon: LogOut },
 ];
 

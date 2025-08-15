@@ -19,10 +19,10 @@ const menuItems = [
   { label: "My Purchase", href: "/buyer_dashboard/purchases", icon: GridIcon },
   { label: "Browse product", href: "/buyer_dashboard/product", icon: FilePlus },
   { label: "Saved items", href: "/buyer_dashboard/saved", icon: MessageSquare },
-  { label: "Message", href: "/messages", icon: Mail },
-  { label: "Profile", href: "/profile", icon: UserIcon },
-  { label: "Contact", href: "/contact", icon: Phone },
-  { label: "Settings", href: "/settings", icon: Settings },
+  { label: "Message", href: "/buyer_dashboard/message", icon: Mail },
+  { label: "Profile", href: "/buyer_dashboard/profile", icon: UserIcon },
+  { label: "Contact", href: "/buyer_dashboard/contact", icon: Phone },
+  { label: "Settings", href: "/buyer_dashboard/settings", icon: Settings },
   { label: "Logout", href: "/logout", icon: LogOut },
 ];
 

@@ -1,47 +1,86 @@
 "use client";
-import { 
-  CheckCircle, LayoutGrid, FilePlus, MessageSquare, BarChart2, ShoppingCart, 
-  User, Phone, Settings, LogOut, Mail, Pencil, Trash2, Plus, Search, ChevronDown 
+import { useState } from "react";
+import {
+  CheckCircle,
+  LayoutGrid,
+  FilePlus,
+  MessageSquare,
+  ShoppingCart,
+  User,
+  Phone,
+  Settings,
+  LogOut,
+  Mail,
+  Pencil,
+  Trash2,
+  Plus,
+  Search,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; 
+import Image from "next/image";
 
 const Logo = () => (
   <span className="font-extrabold text-2xl tracking-tight">
-    <span className="text-green-700">Umuhinzi</span><span className="text-black">Link</span>
+    <span className="text-green-700">Umuhinzi</span>
+    <span className="text-black">Link</span>
   </span>
 );
 
 const menuItems = [
-  { label: 'Dashboard', href: '/supplier_dashboard', icon: CheckCircle },
-  { label: 'My Inputs', href: '/supplier_dashboard/products', icon: LayoutGrid },
-  { label: 'Farmer Request', href: '/supplier_dashboard/requests', icon: FilePlus },
-  { label: 'Orders', href: '/supplier_dashboard/orders', icon: ShoppingCart },
-  { label: 'Message', href: '/messages', icon: Mail },
-  { label: 'Profile', href: '/profile', icon: User },
-  { label: 'Contact', href: '/contact', icon: Phone },
-  { label: 'Settings', href: '/settings', icon: Settings },
-  { label: 'Logout', href: '/logout', icon: LogOut },
-];
-
-const inputs = [
-  { id: 1, name: "Premium Corn Seeds", category: "Seeds", price: 45.0, stock: 150, status: "In Stock", image: "/corn-seeds.png" },
-  { id: 2, name: "NPK Fertilizer", category: "Fertilizers", price: 32.5, stock: 8, status: "Low Stock", image: "/npk-fertilizer.png" },
-  { id: 3, name: "Garden Hoe", category: "Tools", price: 28.0, stock: 45, status: "In Stock", image: "/garden-hoe.png" },
-  { id: 4, name: "Tomato Seeds", category: "Seeds", price: 12.75, stock: 0, status: "Out of Stock", image: "/tomato-seeds.png" },
-  { id: 5, name: "Organic Pesticide", category: "Pesticides", price: 22.9, stock: 67, status: "In Stock", image: "/organic-pesticide.png" },
-  { id: 6, name: "Wheat Seeds", category: "Seeds", price: 38.2, stock: 12, status: "Low Stock", image: "/wheat-seeds.png" },
-  { id: 7, name: "Watering Can", category: "Tools", price: 15.5, stock: 89, status: "In Stock", image: "/watering-can.png" },
-  { id: 8, name: "Organic Compost", category: "Fertilizers", price: 19.99, stock: 0, status: "Out of Stock", image: "/organic-compost.png" },
+  { label: "Dashboard", href: "/supplier_dashboard", icon: CheckCircle },
+  { label: "My Inputs", href: "/supplier_dashboard/products", icon: LayoutGrid },
+  { label: "Farmer Request", href: "/supplier_dashboard/requests", icon: FilePlus },
+  { label: "Orders", href: "/supplier_dashboard/orders", icon: ShoppingCart },
+  { label: "Message", href: "/supplier_dashboard/message", icon: Mail },
+  { label: "Profile", href: "/supplier_dashboard/profile", icon: User },
+  { label: "Contact", href: "/supplier_dashboard/contact", icon: Phone },
+  { label: "Settings", href: "/supplier_dashboard/settings", icon: Settings },
+  { label: "Logout", href: "/logout", icon: LogOut },
 ];
 
 export default function ProductsPage() {
+  const [showForm, setShowForm] = useState(false);
+  const [inputs, setInputs] = useState([
+    { id: 1, name: "Premium Corn Seeds", category: "Seeds", price: 45.0, stock: 150, status: "In Stock", image: "/corn-seeds.png" },
+    { id: 6, name: "Wheat Seeds", category: "Seeds", price: 38.2, stock: 12, status: "Low Stock", image: "/wheat-seeds.png" },
+  ]);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    category: "",
+    price: "",
+    stock: "",
+    status: "In Stock",
+    image: null as File | null,
+    imagePreview: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newItem = {
+      id: Date.now(),
+      name: formData.name,
+      category: formData.category,
+      price: parseFloat(formData.price),
+      stock: parseInt(formData.stock),
+      status: formData.status,
+      image: formData.imagePreview || "/placeholder.png",
+    };
+    setInputs([newItem, ...inputs]);
+    setFormData({ name: "", category: "", price: "", stock: "", status: "In Stock", image: null, imagePreview: "" });
+    setShowForm(false);
+  };
+
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 relative">
       {/* Header */}
       <header className="sticky top-0 z-30 bg-white border-b h-16 flex items-center justify-between px-8 shadow-sm">
         <Logo />
-        <button className="bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors cursor-pointer">
+        <button
+          onClick={() => setShowForm(true)}
+          className="bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-700 transition-colors cursor-pointer"
+        >
           <Plus className="w-4 h-4" />
           Add New Input
         </button>
@@ -52,18 +91,18 @@ export default function ProductsPage() {
         <aside className="w-64 bg-white border-r flex flex-col">
           <nav className="flex-1 px-4 py-6 space-y-2">
             {menuItems.map((item, index) => {
-              const isActive = item.label === 'My Inputs';
+              const isActive = item.label === "My Inputs";
               const Icon = item.icon;
-              const showDivider = index === 3 || index === 8; 
+              const showDivider = index === 3 || index === 8;
               return (
                 <div key={item.label}>
                   <Link href={item.href} className="block">
                     <div
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all text-sm font-medium
-                        ${isActive
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all text-sm font-medium ${
+                        isActive
                           ? "bg-green-600 text-white shadow-sm"
                           : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                        }`}
+                      }`}
                     >
                       <Icon className={`w-5 h-5 ${isActive ? "text-white" : "text-gray-500"}`} />
                       <span>{item.label}</span>
@@ -78,7 +117,7 @@ export default function ProductsPage() {
 
         {/* Main */}
         <main className="flex-1 p-6 bg-gray-50 overflow-auto">
-          {/* Search and filters */}
+          {/* Search */}
           <div className="flex justify-between items-center mb-6 gap-4">
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -100,20 +139,16 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          {/* Products grid */}
+          {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {inputs.map((item) => (
-              <div key={item.id} className="bg-white rounded-lg shadow-sm border overflow-hidden hover:shadow-md transition-shadow">
+              <div
+                key={item.id}
+                className="bg-white rounded-lg shadow-sm border overflow-hidden hover:shadow-md transition-shadow"
+              >
                 <div className="relative">
-                  {/* ✅ Display product image */}
                   <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      width={300}
-                      height={200}
-                      className="object-cover w-full h-full"
-                    />
+                    <Image src={item.image} alt={item.name} width={300} height={200} className="object-cover w-full h-full" />
                   </div>
                   <div
                     className={`absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-medium ${
@@ -133,13 +168,16 @@ export default function ProductsPage() {
                   <div className="flex items-center justify-between mb-2">
                     <p className="text-lg font-bold text-gray-900">${item.price.toFixed(2)}</p>
                     <p className="text-sm text-gray-600">
-                      Stock: <span className={`font-medium ${
-                        item.stock === 0
-                          ? "text-red-600"
-                          : item.stock < 15
-                          ? "text-orange-600"
-                          : "text-gray-900"
-                      }`}>
+                      Stock:{" "}
+                      <span
+                        className={`font-medium ${
+                          item.stock === 0
+                            ? "text-red-600"
+                            : item.stock < 15
+                            ? "text-orange-600"
+                            : "text-gray-900"
+                        }`}
+                      >
                         {item.stock}
                       </span>
                     </p>
@@ -157,24 +195,100 @@ export default function ProductsPage() {
               </div>
             ))}
           </div>
-
-          {/* Pagination */}
-          <div className="flex justify-between items-center mt-8">
-            <p className="text-sm text-gray-600">Showing 1 to 8 of 24 products</p>
-            <div className="flex items-center gap-2">
-              <button className="p-2 text-gray-400 hover:text-gray-600 transition-colors">
-                &lt;
-              </button>
-              <button className="bg-green-600 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer">1</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">2</button>
-              <button className="px-3 py-2 text-gray-600 hover:text-gray-900 cursor-pointer transition-colors text-sm">3</button>
-              <button className="p-2 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors">
-                &gt;
-              </button>
-            </div>
-          </div>
         </main>
       </div>
+
+      {/* Modal for Form */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/30">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+            <h2 className="text-lg font-bold mb-4">Add New Input</h2>
+            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+              <input
+                type="text"
+                placeholder="Product Name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="border rounded-lg px-3 py-2"
+              />
+              <input
+                type="text"
+                placeholder="Category"
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                required
+                className="border rounded-lg px-3 py-2"
+              />
+              <input
+                type="number"
+                placeholder="Price"
+                step="0.01"
+                value={formData.price}
+                onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                required
+                className="border rounded-lg px-3 py-2"
+              />
+              <input
+                type="number"
+                placeholder="Stock"
+                value={formData.stock}
+                onChange={(e) => setFormData({ ...formData, stock: e.target.value })}
+                required
+                className="border rounded-lg px-3 py-2"
+              />
+              <select
+                value={formData.status}
+                onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+                className="border rounded-lg px-3 py-2"
+              >
+                <option value="In Stock">In Stock</option>
+                <option value="Low Stock">Low Stock</option>
+                <option value="Out of Stock">Out of Stock</option>
+              </select>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  const file = e.target.files?.[0] || null;
+                  if (file) {
+                    setFormData({
+                      ...formData,
+                      image: file,
+                      imagePreview: URL.createObjectURL(file),
+                    });
+                  }
+                }}
+                className="border rounded-lg px-3 py-2"
+              />
+              {formData.imagePreview && (
+                <Image
+                  src={formData.imagePreview}
+                  alt="Preview"
+                  width={200}
+                  height={150}
+                  className="rounded-md border"
+                />
+              )}
+              <div className="flex justify-end gap-2 mt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowForm(false)}
+                  className="px-4 py-2 rounded-lg border border-gray-300 hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+                >
+                  Save Product
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

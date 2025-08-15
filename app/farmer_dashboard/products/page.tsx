@@ -14,11 +14,11 @@ const menuItems = [
   { label: 'Input Request', href: '/farmer_dashboard/requests', icon: FilePlus },
   { label: 'AI Tips', href: '/farmer_dashboard/ai', icon: MessageSquare },
   { label: 'Market Analytics', href: '/farmer_dashboard/market_analysis', icon: BarChart2 },
-  { label: 'Message', href: '/messages', icon: Mail },
-  { label: 'Orders', href: '/orders', icon: ShoppingCart },
-  { label: 'Profile', href: '/profile', icon: User },
-  { label: 'Contact', href: '/contact', icon: Phone },
-  { label: 'Settings', href: '/settings', icon: Settings },
+  { label: 'Message', href: '/farmer_dashboard/message', icon: Mail },
+  { label: 'Orders', href: '/farmer_dashboard/orders', icon: ShoppingCart },
+  { label: 'Profile', href: '/farmer_dashboard/profile', icon: User },
+  { label: 'Contact', href: '/farmer_dashboard/contact', icon: Phone },
+  { label: 'Settings', href: '/farmer_dashboard/settings', icon: Settings },
   { label: 'Logout', href: '/logout', icon: LogOut },
 ];
 
@@ -45,9 +45,11 @@ export default function Products() {
       {/* Header */}
       <header className="sticky top-0 z-30 bg-white border-b h-16 flex items-center justify-between px-8 shadow-sm">
         <Logo />
-        <button className="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 cursor-pointer">
-          + Add New Produce
-        </button>
+        <Link href="/farmer_dashboard/add_produce">
+  <button className="bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-green-700 transition">
+    + Add New Produce
+  </button>
+</Link>
       </header>
 
       <div className="flex flex-1 min-h-0">
